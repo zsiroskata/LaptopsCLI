@@ -15,6 +15,7 @@ namespace LaptopsCLI
         public string Model { get; set; }
         public string OS { get; set; }
         public double Price { get; set; }
+        public int Ram { get; set; }
         public string Screen { get; set; }
         public string Storage { get; set; }
         public Laptop(string sor) 
@@ -35,15 +36,18 @@ namespace LaptopsCLI
 
             Model = s[5];
             OS = s[6];
-            Price = int.Parse(s[7]);
-            Screen = s[8];
-            Storage = s[9];
+      
+
+            Price = double.Parse(s[7]);
+            Ram = int.Parse(s[8]);
+            Screen = s[9];
+            Storage = s[10];
 
         }
 
         public override string ToString()
         {
-            return $"{Category} | {Manufacturer} | {OS}";
+            return $"{Category.CategoryName} | {Manufacturer.ManufacturerName} {Model}| {OS}";
         }
 
     }
